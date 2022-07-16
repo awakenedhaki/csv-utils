@@ -1,7 +1,7 @@
 import csv
 from lib2to3.pgen2.token import COMMA
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Union
 
 # CONSTANTS
 TAB_DELIMETER = '\t'

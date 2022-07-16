@@ -1,9 +1,9 @@
 from pathlib import Path
-from typing import Iterable, Union, Generator
+from typing import Iterable, List, Union, Generator
 
 # FUNCTIONS
 
-def load_tables(paths: Iterable[Union[str, Path]]) -> Generator[str]:
+def load_tables(paths: Iterable[Union[str, Path]]) -> Generator[str, None, None]:
     '''
     Loads tabular data files which paths have been specified.
 
@@ -17,9 +17,9 @@ def load_tables(paths: Iterable[Union[str, Path]]) -> Generator[str]:
     A generator with each element corresponding to an iterable of the lines within the file.
     '''
     for path in paths:
-        yield from _load_table(path)
+        yield from load_table(path)
 
-def _load_table(path: Union[str, Path]) -> Generator[str]:
+def load_table(path: Union[str, Path]) -> List[str]:
     '''
     '''
     with open(path, 'r') as f:
