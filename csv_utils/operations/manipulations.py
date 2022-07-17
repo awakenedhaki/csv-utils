@@ -1,6 +1,5 @@
 from typing import Iterable, Generator, List
 
-# FUNCTIONS
 def split_(table: Iterable, nrows_per_table: int) -> Generator[List, None, None]:
     '''
     Splits an iterable object into n number of iterables.
