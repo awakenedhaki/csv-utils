@@ -14,11 +14,11 @@ def test_load_table_csv_one_column(sample_id):
     observed = next(load_table(path_sample))
     assert observed == expected
 
-pytest.mark.parametrize('first,second,file_type', [
-    ['01', '02', 'csv'],
-    ['02', '01', 'csv'],
-    ['01', '02', 'tsv'],
-    ['02', '01', 'tsv']
+@pytest.mark.parametrize('first,second,file_type', [
+    ('01', '02', 'csv'),
+    ('02', '01', 'csv'),
+    ('01', '02', 'tsv'),
+    ('02', '01', 'tsv')
 ])
 def test_load_tables_csv_two_columns(first, second, file_type):
     expected = [
