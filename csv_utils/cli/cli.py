@@ -24,10 +24,15 @@ def cli():
 @click.option(
     '--format', type = click.Choice(['csv', 'tsv'], case_sensitive=False)
 )
-def split(filename, directory, ntables, nrows, format):
+@click.options(
+    '--header', type = click.BOOL, default = False
+)
+def split(filename, directory, ntables, nrows, format, header):
     # Load the tabular data
     table = load_table(filename)
-    
+    if header:
+        header, table = table[0], table[1:]
+        
     # Determine which `splitting` operation to perform
     if ntables is not None:
         tables = split_ntables(table, ntables = ntables)
