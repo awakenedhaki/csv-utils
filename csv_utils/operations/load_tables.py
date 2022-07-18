@@ -17,10 +17,10 @@ def load_tables(paths: Iterable[Union[str, Path]]) -> Generator[str, None, None]
     A generator with each element corresponding to an iterable of the lines within the file.
     '''
     for path in paths:
-        yield from load_table(path)
+        yield load_table(path)
 
 def load_table(path: Union[str, Path]) -> List[str]:
     '''
     '''
     with open(path, 'r') as f:
-        yield f.readlines()
+        return f.readlines()
