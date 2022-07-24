@@ -2,7 +2,6 @@ from pathlib import Path
 from typing import Iterable, List, Union, Generator
 
 # FUNCTIONS
-
 def load_tables(paths: Iterable[Union[str, Path]]) -> Generator[str, None, None]:
     '''
     Loads tabular data files which paths have been specified.

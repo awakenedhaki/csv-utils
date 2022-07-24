@@ -1,14 +1,15 @@
 import click
 
-from csv_utils import *
-from pathlib import Path
-from csv_utils.cli.helpers import MutuallyExclusiveOption
+from csv_utils.objects import MutuallyExclusiveOption
+from csv_utils.utils import (
+    save_csv,
+    save_tsv,
+    load_table,
+    split_,
+    split_ntables
+)
 
-@click.group()
-def cli():
-    pass
-
-@cli.command('split')
+@click.command('split')
 @click.argument(
     'filename', nargs = 1, type = click.File(mode = 'r', lazy = False)
 )
@@ -24,7 +25,7 @@ def cli():
 @click.option(
     '--format', type = click.Choice(['csv', 'tsv'], case_sensitive=False)
 )
-@click.options(
+@click.option(
     '--header', type = click.BOOL, default = False
 )
 def split(filename, directory, ntables, nrows, format, header):
@@ -46,7 +47,3 @@ def split(filename, directory, ntables, nrows, format, header):
             save_tsv(table, directory / _id)
         elif format == 'csv':
             save_csv(table, directory / _id)
-        
-
-if __name__ == '__main__':
-    cli()
