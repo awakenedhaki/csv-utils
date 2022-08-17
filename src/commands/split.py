@@ -1,7 +1,7 @@
 import click
 
-from csv_utils.objects import MutuallyExclusiveOption
-from csv_utils.utils import (
+from src.objects import MutuallyExclusiveOption
+from src.utils import (
     save_csv,
     save_tsv,
     load_table,

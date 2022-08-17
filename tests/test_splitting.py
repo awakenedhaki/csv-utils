@@ -1,4 +1,4 @@
-from csv_utils import split_, split_ntables
+from src import split_, split_ntables
 from tests.utils import read_sample, generate_lines
 
 def test_split_single_column_with_round_number_rows():

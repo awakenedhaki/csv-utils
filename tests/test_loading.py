@@ -1,7 +1,7 @@
 import os
 import pytest
 
-from csv_utils import load_table, load_tables
+from src import load_table, load_tables
 from tests.utils import DATA_DIR, read_sample
 
 @pytest.mark.parametrize('sample_id', [
