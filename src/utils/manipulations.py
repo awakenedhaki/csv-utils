@@ -1,5 +1,7 @@
+# DEPENDENCIES =================================================================
 from typing import Iterable, Generator, List
 
+# FUNCTIONS ====================================================================
 def split_(table: Iterable, nrows_per_table: int) -> Generator[List, None, None]:
     '''
     Splits an iterable object into n number of iterables.
@@ -26,6 +28,9 @@ def split_(table: Iterable, nrows_per_table: int) -> Generator[List, None, None]
         previous_cutoff_index = current_cutoff_index
 
 def split_ntables(table: Iterable, *args, ntables: int = 2, **kwargs) -> Generator[List, None, None]:
+    '''
+    Split, or partition, a nested iterable into ntables.
+    '''
     table = list(table)
     nrows_per_table = len(table) // ntables
     yield from split_(table, *args, nrows_per_table = nrows_per_table, **kwargs)

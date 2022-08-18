@@ -1,7 +1,9 @@
+# DEPENDENCIES =================================================================
 import click
 
-from src.objects import MutuallyExclusiveOption
-from src.utils import (
+from pathlib import Path
+from objects import MutuallyExclusiveOption
+from utils import (
     save_csv,
     save_tsv,
     load_table,
@@ -9,6 +11,7 @@ from src.utils import (
     split_ntables
 )
 
+# COMMAND ======================================================================
 @click.command('split')
 @click.argument(
     'filename', nargs = 1, type = click.File(mode = 'r', lazy = False)
