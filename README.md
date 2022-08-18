@@ -4,7 +4,7 @@ A CSV utilities CLI for basic operations on tabular data on the terminal.
 
 ## Installation
 
-To start using the CSV Utilities CLI, you will first have to clone this repository. Use the commond belwo to get started!
+To start using the CSV Utilities CLI, you will first have to clone this repository. Use the commond below to get started!
 
 ```{zsh}
 $ git clone https://github.com/awakenedhaki/csv-utils.git
